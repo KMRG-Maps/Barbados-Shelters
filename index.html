@@ -9,6 +9,10 @@
         <link rel="stylesheet" href="css/leaflet.css">
         <link rel="stylesheet" href="css/qgis2web.css">
         <link rel="stylesheet" href="css/leaflet-search.css">
+        <!-- Geolocate links -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/L.Control.Locate.scss" />
+<!-- Geolocate links -->
         <style>
         html, body, #map {
             width: 100%;
@@ -33,6 +37,10 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet-search.js"></script>
         <script src="data/AllShelters_0.js"></script>
+        <!-- Geolocate links -->
+		<script src="js/L.Control.Locate.js"></script>
+
+<!-- End of Geolocate sources -->
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -226,6 +234,17 @@
             initial: true,
             hideMarkerOnCollapse: true,
             propertyName: 'Name'}));
+                                    //Geolocate Code
+L.control.locate({
+    position: 'topleft',
+    strings: {
+        title: "Show me where I am, yo!"
+    },
+    locateOptions: {
+               enableHighAccuracy: true
+}
+}).addTo(map);
+        //End of Geolocate Code
         </script>
     </body>
 </html>
