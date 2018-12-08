@@ -20,10 +20,27 @@
             padding: 0;
             margin: 0;
         }
+	/*HEADER STYLE*/
+        #header_wrap {
+		height: 60px;
+		background-color: #ffff33;
+		}
+	/*END OF HEADER STYLE*/ 
         </style>
         <title></title>
     </head>
     <body>
+    	 <!-- HEADER -->
+		<div id="header_wrap" class="outer">
+		    <header class="inner">
+		    	<img src="images/sheltericonblue.png" style="width:40px;height:40px;border:0;padding-left: 25px;padding-top: 10px;">
+		    	<img src="images/shelterslogo1blue.png" style="width:100px;height:40px;border:0;padding-left: 0px;padding-top: 10px;">
+				<a href="http://kmrgenterprises.weebly.com/blog/my-webmap-is-online">
+				  <img src="images/infoiconblue.png" style="width:40px;height:40px;border:0;padding-right: 25px;padding-top: 10px;" align="right">
+				</a>
+		    </header>
+		</div>
+	<!-- END of HEADER -->	    
         <div id="map">
         </div>
         <script src="js/qgis2web_expressions.js"></script>
@@ -93,26 +110,10 @@
                         <td colspan="2"><strong>Name</strong><br />' + (feature.properties['Name'] !== null ? Autolinker.link(String(feature.properties['Name'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>descriptio</strong><br />' + (feature.properties['descriptio'] !== null ? Autolinker.link(String(feature.properties['descriptio'])) : '') + '</td>\
+                        <td colspan="2"><strong>description</strong><br />' + (feature.properties['descriptio'] !== null ? Autolinker.link(String(feature.properties['descriptio'])) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2"><strong>Capcity</strong><br />' + (feature.properties['Capcity'] !== null ? Autolinker.link(String(feature.properties['Capcity'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Potable</th>\
-                        <td>' + (feature.properties['Potable'] !== null ? Autolinker.link(String(feature.properties['Potable'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">NonPotable</th>\
-                        <td>' + (feature.properties['NonPotable'] !== null ? Autolinker.link(String(feature.properties['NonPotable'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Amenities</th>\
-                        <td>' + (feature.properties['Amenities'] !== null ? Autolinker.link(String(feature.properties['Amenities'])) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">ID</th>\
-                        <td>' + (feature.properties['ID'] !== null ? Autolinker.link(String(feature.properties['ID'])) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2"><strong>Parish</strong><br />' + (feature.properties['Parish'] !== null ? Autolinker.link(String(feature.properties['Parish'])) : '') + '</td>\
