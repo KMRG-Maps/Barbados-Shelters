@@ -76,14 +76,14 @@
             highlightLayer.openPopup();
         }
         var map = L.map('map', {
-            zoomControl:true, maxZoom:28, minZoom:8
+            zoomControl:true, maxZoom:17, minZoom:8
         }).fitBounds([[13.041839838,-59.8021693432],[13.4228246173,-59.1587496765]]);
         var hash = new L.Hash(map);
         map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
         var bounds_group = new L.featureGroup([]);
         var basemap0 = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '<a href="http://gisbarbados.gov.bb/download/emergency-shelters-2017/">BGIS</a>;&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
-            maxZoom: 28
+            maxZoom: 17
         });
         basemap0.addTo(map);
         function setBounds() {
@@ -242,7 +242,8 @@ L.control.locate({
         title: "Show me where I am, yo!"
     },
     locateOptions: {
-               enableHighAccuracy: true
+               enableHighAccuracy: true,
+	       maxZoom:15
 }
 }).addTo(map);
         //End of Geolocate Code
